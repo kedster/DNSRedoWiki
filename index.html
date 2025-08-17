@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNSRedo Knowledge Base</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">
+            <div class="logo-icon">D</div>
+            DNSRedo Knowledge Base
+        </a>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search documentation..." id="searchInput">
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">
+            <span id="themeIcon">Theme</span>
+        </button>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-nav">
+                <div class="nav-section">
+                    <h3>Getting Started</h3>
+                    <a class="nav-item active" data-section="overview">Overview</a>
+                    <a class="nav-item" data-section="quick-start">Quick Start Guide</a>
+                    <a class="nav-item" data-section="target-audience">Who This Is For</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Core Features</h3>
+                    <a class="nav-item" data-section="dashboard">Dashboard</a>
+                    <a class="nav-item" data-section="domains">Domain Management</a>
+                    <a class="nav-item" data-section="security">Security Center</a>
+                    <a class="nav-item" data-section="analytics">Analytics</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Tools & Settings</h3>
+                    <a class="nav-item" data-section="dns-tools">DNS Tools</a>
+                    <a class="nav-item" data-section="settings">Settings</a>
+                    <a class="nav-item" data-section="help">DNS Help</a>
+                </div>
+
+                <div class="nav-section">
+                    <h3>Advanced</h3>
+                    <a class="nav-item" data-section="admin">Admin Panel</a>
+                    <a class="nav-item" data-section="pricing">Pricing & Billing</a>
+                    <a class="nav-item" data-section="api">API Reference</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview Section -->
+            <div id="overview" class="content-section active">
+                <div class="content-header">
+                    <nav class="breadcrumb">
+                        <a href="#overview">Home</a> / Overview
+                    </nav>
+                    <h1>DNSRedo Platform</h1>
+                    <p class="subtitle">Enterprise DNS Orchestration & Protection Platform</p>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong> Welcome to DNSRedo!</strong> Your comprehensive DNS management platform with AI-powered
+                    protection, real-time monitoring, and multi-provider support.
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3> Health Monitoring</h3>
+                        <p>Comprehensive domain health dashboard with alerts.</p>
+                        <ul>
+                            <li>DNS propagation status</li>
+                            <li>Record validation checks</li>
+                            <li>Security threat detection</li>
+                            <li>Performance anomalies</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> AI Assistant</h3>
+                        <p>Intelligent DNS helper with smart recommendations.</p>
+                        <ul>
+                            <li>Troubleshooting guidance</li>
+                            <li>Configuration suggestions</li>
+                            <li>Performance optimization</li>
+                            <li>Best practice recommendations</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Quick Actions</h3>
+                        <p>One-click access to common DNS operations.</p>
+                        <ul>
+                            <li>Add new DNS records</li>
+                            <li>Create instant backups</li>
+                            <li>Refresh provider data</li>
+                            <li>Domain search & filter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Dashboard Controls</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Control</th>
+                                <th>Function</th>
+                                <th>Location</th>
+                                <th>Usage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Domain Selector</strong></td>
+                                <td>Filter view by domain</td>
+                                <td>Top navigation</td>
+                                <td>Choose specific domain or "All Domains"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Search Records</strong></td>
+                                <td>Find DNS records</td>
+                                <td>Search bar</td>
+                                <td>Filter by name, value, or type</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Add Record</strong></td>
+                                <td>Create new DNS entry</td>
+                                <td>Action button</td>
+                                <td>Quick record creation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Assistant</strong></td>
+                                <td>Open intelligent helper</td>
+                                <td>AI button</td>
+                                <td>Get smart recommendations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Refresh Data</strong></td>
+                                <td>Sync from provider</td>
+                                <td>Refresh button</td>
+                                <td>Update latest DNS data</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Backup Now</strong></td>
+                                <td>Create domain snapshot</td>
+                                <td>Backup button</td>
+                                <td>Instant backup creation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Auto-Refresh Settings</h2>
+                <div class="alert alert-success">
+                    <strong> Real-Time Updates:</strong> Dashboard automatically refreshes every 30 seconds to provide
+                    live DNS monitoring data.
+                </div>
+
+                <pre><code> Default Refresh: 30 seconds
+ Configurable: 15s - 300s intervals
+ Live Data: Real-time statistics
+ Instant Alerts: Immediate notifications</code></pre>
+            </div>
+
+            <!-- Domains Section -->
+            <div id="domains" class="content-section">
+                <div class="content-header">
+                    <nav class="breadcrumb">
+                        <a href="#overview">Home</a> / Domain Management
+                    </nav>
+                    <h1>Domain Management</h1>
+                    <p class="subtitle">Complete domain management across multiple DNS providers</p>
+                </div>
+
+                <h2>Multi-Provider Support</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3> Cloudflare</h3>
+                        <p>Full integration with Cloudflare DNS management.</p>
+                        <span class="badge badge-success">Recommended</span>
+                        <ul>
+                            <li>Global DNS network</li>
+                            <li>Advanced security features</li>
+                            <li>High-performance resolution</li>
+                            <li>DDoS protection integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> AWS Route53</h3>
+                        <p>Enterprise-grade DNS with AWS ecosystem integration.</p>
+                        <span class="badge badge-primary">Enterprise</span>
+                        <ul>
+                            <li>99.99% SLA availability</li>
+                            <li>Health check integration</li>
+                            <li>Geographic routing</li>
+                            <li>AWS service integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> DigitalOcean</h3>
+                        <p>Developer-friendly DNS with simple management.</p>
+                        <span class="badge badge-success">Popular</span>
+                        <ul>
+                            <li>Developer-focused interface</li>
+                            <li>Fast propagation times</li>
+                            <li>Competitive pricing</li>
+                            <li>API-first approach</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Namecheap</h3>
+                        <p>Domain registrar with integrated DNS management.</p>
+                        <span class="badge badge-warning">Basic</span>
+                        <ul>
+                            <li>Domain registration integration</li>
+                            <li>Basic DNS features</li>
+                            <li>Email hosting support</li>
+                            <li>SSL certificate integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Domain Operations</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operation</th>
+                                <th>Description</th>
+                                <th>Access Level</th>
+                                <th>Time Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Add Domain</strong></td>
+                                <td>Register new domain for management</td>
+                                <td>User</td>
+                                <td>
+                                    < 2 minutes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Search Domains</strong></td>
+                                <td>Filter and find specific domains</td>
+                                <td>User</td>
+                                <td>Instant</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Visit Domain</strong></td>
+                                <td>External link to live website</td>
+                                <td>User</td>
+                                <td>Instant</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Domain Settings</strong></td>
+                                <td>Configure provider API credentials</td>
+                                <td>Admin</td>
+                                <td>
+                                    < 5 minutes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Debug Domain</strong></td>
+                                <td>Technical diagnostics and troubleshooting</td>
+                                <td>User</td>
+                                <td>30 seconds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Remove Domain</strong></td>
+                                <td>Remove domain from management</td>
+                                <td>Admin</td>
+                                <td>
+                                    < 1 minute</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>DNS Record Management</h2>
+                <div class="alert alert-info">
+                    <strong> Full CRUD Operations:</strong> Create, read, update, and delete DNS records with
+                    real-time validation and propagation monitoring.
+                </div>
+
+                <h3>Supported Record Types</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3> Standard Records</h3>
+                        <ul>
+                            <li><code>A</code> - IPv4 addresses</li>
+                            <li><code>AAAA</code> - IPv6 addresses</li>
+                            <li><code>CNAME</code> - Canonical names</li>
+                            <li><code>MX</code> - Mail exchange</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔧 Advanced Records</h3>
+                        <ul>
+                            <li><code>TXT</code> - Text records</li>
+                            <li><code>SRV</code> - Service records</li>
+                            <li><code>NS</code> - Name servers</li>
+                            <li><code>PTR</code> - Reverse DNS</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Bulk Operations</h2>
+                <pre><code> Bulk Import: CSV/Excel file support
+ Bulk Export: Download all domain data
+ Bulk Delete: Multi-record removal
+ Bulk Validate: Mass record verification</code></pre>
+
+                <div class="alert alert-warning">
+                    <strong> Best Practice:</strong> Always create a backup before performing bulk operations on
+                    critical domains.
+                </div>
+            </div>
+
+            <!-- Security Section -->
+            <div id="security" class="content-section">
+                <div class="content-header">
+                    <nav class="breadcrumb">
+                        <a href="#overview">Home</a> / Security Center
+                    </nav>
+                    <h1>Security Center</h1>
+                    <p class="subtitle">Advanced DNS protection and backup management</p>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong> Comprehensive Protection:</strong> The Security Center provides automated backups,
+                    real-time monitoring, and advanced threat detection for your DNS infrastructure.
+                </div>
+
+                <h2>Security Dashboard</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3> Protection Status</h3>
+                        <p>Real-time security monitoring for all domains.</p>
+                        <ul>
+                            <li>Active protection count</li>
+                            <li>Recent security events</li>
+                            <li>Threat detection status</li>
+                            <li>Backup health overview</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Alert Summary</h3>
+                        <p>Centralized view of all security alerts and notifications.</p>
+                        <ul>
+                            <li>Critical security alerts</li>
+                            <li>DNS change notifications</li>
+                            <li>Backup failure alerts</li>
+                            <li>Performance warnings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>📱 Backups Tab</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Description</th>
+                                <th>Frequency</th>
+                                <th>Retention</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Manual Backups</strong></td>
+                                <td>On-demand domain snapshots</td>
+                                <td>User-triggered</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Automated Backups</strong></td>
+                                <td>Scheduled background snapshots</td>
+                                <td>5-60 minutes</td>
+                                <td>30 days default</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Change-Triggered</strong></td>
+                                <td>Backup before DNS modifications</td>
+                                <td>Before each change</td>
+                                <td>7 days</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Provider Sync</strong></td>
+                                <td>Fresh data from DNS provider</td>
+                                <td>Real-time</td>
+                                <td>Latest state</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Backup Operations</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3> Create Backup</h3>
+                        <p>Instant domain snapshot creation.</p>
+                        <ul>
+                            <li>One-click backup creation</li>
+                            <li>Custom backup descriptions</li>
+                            <li>Timestamp-based naming</li>
+                            <li>Metadata preservation</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Restore Backup</h3>
+                        <p>Quick restoration from previous snapshots.</p>
+                        <ul>
+                            <li>Preview before restore</li>
+                            <li>Selective record restoration</li>
+                            <li>Rollback confirmation</li>
+                            <li>Change impact analysis</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Backup Management</h3>
+                        <p>Organize and manage backup history.</p>
+                        <ul>
+                            <li>Backup browsing interface</li>
+                            <li>Custom retention policies</li>
+                            <li>Storage optimization</li>
+                            <li>Export capabilities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2> Monitoring Tab</h2>
+                <div class="alert alert-info">
+                    <strong> Real-Time Detection:</strong> Advanced monitoring systems track DNS changes across all
+                    providers with instant notifications.
+                </div>
+
+                <h3>Monitoring Features</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3> Change Detection</h3>
+                        <ul>
+                            <li>Real-time DNS monitoring</li>
+                            <li>Record modification tracking</li>
+                            <li>Unauthorized change alerts</li>
+                            <li>Provider API monitoring</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Protection Configuration</h3>
+                        <ul>
+                            <li>Enable/disable per domain</li>
+                            <li>Monitoring sensitivity settings</li>
+                            <li>Custom alert thresholds</li>
+                            <li>Notification preferences</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2> Alerts Tab</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Alert Type</th>
+                                <th>Trigger</th>
+                                <th>Severity</th>
+                                <th>Response Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>DNS Changes</strong></td>
+                                <td>Record modifications detected</td>
+                                <td>Medium</td>
+                                <td>
+                                    < 30 seconds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Security Threats</strong></td>
+                                <td>Suspicious activity detected</td>
+                                <td>High</td>
+                                <td>
+                                    < 10 seconds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Backup Failures</strong></td>
+                                <td>Backup process errors</td>
+                                <td>Medium</td>
+                                <td>
+                                    < 60 seconds</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Propagation Issues</strong></td>
+                                <td>DNS resolution problems</td>
+                                <td>High</td>
+                                <td>
+                                    < 45 seconds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2> Settings Tab</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3> Protection Preferences</h3>
+                        <ul>
+                            <li>Global protection settings</li>
+                            <li>Domain-specific overrides</li>
+                            <li>Sensitivity adjustments</li>
+                            <li>Auto-backup intervals</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Notification Schedules</h3>
+                        <ul>
+                            <li>Business hours filtering</li>
+                            <li>Weekend notification settings</li>
+                            <li>Holiday schedule overrides</li>
+                            <li>Escalation procedures</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3> Security Thresholds</h3>
+                        <ul>
+                            <li>Change frequency limits</li>
+                            <li>Suspicious activity patterns</li>
+                            <li>Geographic access controls</li>
+                            <li>Time-based restrictions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue with other sections... -->
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+<h3> Advanced Protection</h3>
+<p>Real-time DNS monitoring with automated backups and instant restoration capabilities.</p>
+<ul>
+    <li>Automatic change detection</li>
+    <li>One-click backup & restore</li>
+    <li>Security threat monitoring</li>
+</ul>
+</div>
+
+<div class="feature-card">
+    <h3> Multi-Provider Support</h3>
+    <p>Manage DNS across all major providers from a single, unified interface.</p>
+    <ul>
+        <li>Cloudflare integration</li>
+        <li>AWS Route53 support</li>
+        <li>DigitalOcean & Namecheap</li>
+    </ul>
+</div>
+
+<div class="feature-card">
+    <h3> AI-Powered Assistance</h3>
+    <p>Intelligent DNS analysis and recommendations powered by advanced AI.</p>
+    <ul>
+        <li>Smart troubleshooting</li>
+        <li>Performance optimization</li>
+        <li>Automated problem resolution</li>
+    </ul>
+</div>
+
+<div class="feature-card">
+    <h3> Real-Time Analytics</h3>
+    <p>Comprehensive DNS performance insights and detailed reporting.</p>
+    <ul>
+        <li>Performance metrics</li>
+        <li>Provider distribution</li>
+        <li>Response time monitoring</li>
+    </ul>
+</div>
+</div>
+
+<h2>Platform Architecture</h2>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Component</th>
+                <th>Purpose</th>
+                <th>Key Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Dashboard</strong></td>
+                <td>Main control center</td>
+                <td>Real-time monitoring, domain selector, AI assistant</td>
+            </tr>
+            <tr>
+                <td><strong>Security Center</strong></td>
+                <td>Protection & backups</td>
+                <td>Automated backups, change monitoring, alerts</td>
+            </tr>
+            <tr>
+                <td><strong>DNS Tools</strong></td>
+                <td>Diagnostics & testing</td>
+                <td>Propagation checker, lookup tools, validation</td>
+            </tr>
+            <tr>
+                <td><strong>Analytics</strong></td>
+                <td>Performance insights</td>
+                <td>Metrics, reporting, trend analysis</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+<!-- Quick Start Section -->
+<div id="quick-start" class="content-section">
+    <div class="content-header">
+        <nav class="breadcrumb">
+            <a href="#overview">Home</a> / Quick Start Guide
+        </nav>
+        <h1>Quick Start Guide</h1>
+        <p class="subtitle">Get up and running with DNSRedo in minutes</p>
+    </div>
+
+    <div class="alert alert-success">
+        <strong> 5-Minute Setup:</strong> Follow these steps to secure your first domain with DNSRedo protection.
+    </div>
+
+    <h2>Step 1: Login & Authentication</h2>
+    <pre><code> Authentication Method: Google OAuth
+ Access: Web interface, mobile-friendly
+ Setup Time: < 30 seconds</code></pre>
+
+    <p>Click "Login with Google" to authenticate using your Google account. No password management required.</p>
+
+    <h2>Step 2: Add Your First Domain</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3> Supported Providers</h3>
+            <ul>
+                <li>Cloudflare (recommended)</li>
+                <li>AWS Route53</li>
+                <li>DigitalOcean</li>
+                <li>Namecheap</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3> Required Information</h3>
+            <ul>
+                <li>Domain name</li>
+                <li>DNS provider</li>
+                <li>API credentials</li>
+                <li>Account permissions</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>Adding a Domain:</h3>
+    <ol style="margin-left: 20px; color: var(--text-secondary);">
+        <li>Navigate to <strong>Domains</strong> tab</li>
+        <li>Click <strong>"Add Domain"</strong> button</li>
+        <li>Select your DNS provider</li>
+        <li>Enter domain name and API credentials</li>
+        <li>Test connection and save</li>
+    </ol>
+
+    <h2>Step 3: Enable Protection</h2>
+    <div class="alert alert-warning">
+        <strong> Important:</strong> Enable protection immediately to start monitoring DNS changes and creating
+        automated backups.
+    </div>
+
+    <pre><code> Location: Security Center → Monitoring Tab
+ Auto-backup: Every 5-60 minutes
+ Real-time alerts: Instant notifications
+ Email notifications: Configurable</code></pre>
+
+    <h2>Step 4: Create Initial Backup</h2>
+    <p>Create your first manual backup to establish a baseline:</p>
+    <ol style="margin-left: 20px; color: var(--text-secondary);">
+        <li>Go to <strong>Security Center → Backups</strong></li>
+        <li>Click <strong>"Create Backup"</strong></li>
+        <li>Add description (e.g., "Initial baseline backup")</li>
+        <li>Verify backup completion</li>
+    </ol>
+
+    <h2>Step 5: Configure Alerts</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3> Alert Types</h3>
+            <ul>
+                <li>DNS record changes</li>
+                <li>Propagation failures</li>
+                <li>Security threats</li>
+                <li>Performance issues</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3> Notification Methods</h3>
+            <ul>
+                <li>Email notifications</li>
+                <li>In-app alerts</li>
+                <li>Dashboard warnings</li>
+                <li>API webhooks (coming soon)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="alert alert-info">
+        <strong> You're All Set!</strong> Your domain is now protected with automated monitoring, backups, and
+        intelligent alerts. Visit the Analytics page to monitor performance.
+    </div>
+</div>
+
+<!-- Target Audience Section -->
+<div id="target-audience" class="content-section">
+    <div class="content-header">
+        <nav class="breadcrumb">
+            <a href="#overview">Home</a> / Target Audience
+        </nav>
+        <h1>Who DNSRedo Is For</h1>
+        <p class="subtitle">Professional DNS management for teams and enterprises</p>
+    </div>
+
+    <h2>Primary Target Users</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3> DevOps Engineers</h3>
+            <p>Managing multiple client domains and complex DNS configurations across environments.</p>
+            <span class="badge badge-primary">High Priority</span>
+            <ul>
+                <li>Multi-environment DNS management</li>
+                <li>Automated backup workflows</li>
+                <li>Change tracking and rollbacks</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3> System Administrators</h3>
+            <p>Enterprise DNS management across multiple providers and corporate domains.</p>
+            <span class="badge badge-primary">High Priority</span>
+            <ul>
+                <li>Centralized DNS oversight</li>
+                <li>Security monitoring</li>
+                <li>Compliance reporting</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3> Web Developers</h3>
+            <p>Protecting production domains from accidental changes during development cycles.</p>
+            <span class="badge badge-success">Core User</span>
+            <ul>
+                <li>Production environment protection</li>
+                <li>Quick rollback capabilities</li>
+                <li>Development workflow integration</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3> IT Consultants</h3>
+            <p>Managing DNS for multiple clients with audit trails and professional oversight.</p>
+            <span class="badge badge-success">Core User</span>
+            <ul>
+                <li>Multi-client management</li>
+                <li>Professional reporting</li>
+                <li>Change documentation</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3> SaaS Companies</h3>
+            <p>Mission-critical domain protection and monitoring for high-availability services.</p>
+            <span class="badge badge-warning">Enterprise</span>
+            <ul>
+                <li>High-availability requirements</li>
+                <li>Real-time monitoring</li>
+                <li>Disaster recovery planning</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3> Digital Agencies</h3>
+            <p>Client domain management with comprehensive audit trails and change tracking.</p>
+            <span class="badge badge-success">Core User</span>
+            <ul>
+                <li>Client accountability</li>
+                <li>Change audit trails</li>
+                <li>Professional DNS services</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2> Secondary Users</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>User Type</th>
+                    <th>Use Case</th>
+                    <th>Key Benefits</th>
+                    <th>Plan Recommendation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Technical Founders</strong></td>
+                    <td>Startup infrastructure protection</td>
+                    <td>Peace of mind, automated backups</td>
+                    <td>Free (5 domains)</td>
+                </tr>
+                <tr>
+                    <td><strong>Freelance Developers</strong></td>
+                    <td>Professional domain management</td>
+                    <td>Client trust, professional tools</td>
+                    <td>Premium</td>
+                </tr>
+                <tr>
+                    <td><strong>Small Business Owners</strong></td>
+                    <td>Website protection and monitoring</td>
+                    <td>Business continuity, simple interface</td>
+                    <td>Free to Premium</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-info">
+        <strong> Perfect For Teams:</strong> DNSRedo scales from individual developers managing a few domains to
+        enterprise teams overseeing hundreds of critical DNS configurations.
+    </div>
+
+    <h2>Industry Applications</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3> Enterprise</h3>
+            <ul>
+                <li>Fortune 500 companies</li>
+                <li>Multi-brand management</li>
+                <li>Compliance requirements</li>
+                <li>Risk mitigation</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3>🎓 Education</h3>
+            <ul>
+                <li>University IT departments</li>
+                <li>Multiple subdomain management</li>
+                <li>Student service protection</li>
+                <li>Academic continuity</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3> Healthcare</h3>
+            <ul>
+                <li>HIPAA compliance</li>
+                <li>Critical service uptime</li>
+                <li>Patient portal protection</li>
+                <li>Disaster recovery</li>
+            </ul>
+        </div>
+        <div class="feature-card">
+            <h3> Finance</h3>
+            <ul>
+                <li>Regulatory compliance</li>
+                <li>High-security requirements</li>
+                <li>Zero-downtime needs</li>
+                <li>Audit trail requirements</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Dashboard Section -->
+<div id="dashboard" class="content-section">
+    <div class="content-header">
+        <nav class="breadcrumb">
+            <a href="#overview">Home</a> / Dashboard
+        </nav>
+        <h1>Dashboard</h1>
+        <p class="subtitle">Main navigation hub with real-time DNS monitoring</p>
+    </div>
+
+    <div class="alert alert-info">
+        <strong> Central Command:</strong> The Dashboard provides real-time DNS statistics, domain health monitoring,
+        and quick access to all platform features.
+    </div>
+
+    <h2>Key Features</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3> Real-Time Statistics</h3>
+            <p>Live DNS performance metrics and monitoring data.</p>
+            <ul>
+                <li>Domain status overview</li>
+                <li>DNS response times</li>
+                <li>Provider health checks</li>
+                <li>Recent change activity</li>
+            </ul>
+        </div>
+
+        <div class="feature-card">
+            <h3> Domain Selector</h3>
+            <p>Quickly switch between managed domains.</p>
+            <ul>
+                <li>Searchable domain list</li>
+                <li>Filter by provider</li>
+                <li>Sort by last modified</li>
+                <li>Favorite domains</li>
+            </ul>
