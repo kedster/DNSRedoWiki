@@ -158,6 +158,8 @@
         const sidebar = document.querySelector('.sidebar');
         if (!sidebar) return;
         sidebar.classList.toggle('mobile-open');
+    // Add a class to the body so we can apply docking styles to header/content
+    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('mobile-open'));
     }
 
     // Add mobile menu button (created once)

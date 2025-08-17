@@ -398,6 +398,24 @@
                 padding: 20px;
             }
 
+            /* When sidebar opens on mobile, dock (push) the main content and header smoothly
+               Use transform to avoid layout reflow and sudden jumps. */
+            body.sidebar-open {
+                overflow-x: hidden; /* prevent horizontal scroll while docked */
+            }
+
+            body.sidebar-open .main-content {
+                transform: translateX(var(--sidebar-width));
+                max-width: calc(100vw - var(--sidebar-width));
+                transition: transform 0.3s ease, max-width 0.3s ease;
+            }
+
+            body.sidebar-open .header {
+                transform: translateX(var(--sidebar-width));
+                width: calc(100% - var(--sidebar-width));
+                transition: transform 0.3s ease, width 0.3s ease;
+            }
+
             .header {
                 padding: 0 16px;
             }
