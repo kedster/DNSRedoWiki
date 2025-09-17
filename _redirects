@@ -1,0 +1,13 @@
+# Cloudflare Pages redirects and rewrites
+
+# SPA-style routing - all routes serve index.html
+# This ensures that direct navigation to sections works properly
+/*    /index.html   200
+
+# Redirect common variations to canonical URLs
+/home   /   301
+/index  /   301
+
+# Ensure trailing slash consistency
+/docs   /   301
+/documentation   /   301

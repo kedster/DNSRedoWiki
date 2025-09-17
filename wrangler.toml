@@ -1,0 +1,25 @@
+# Cloudflare configuration for DNSRedo Knowledge Base
+
+# Pages configuration
+[env.production]
+name = "dnsredo-knowledge-base"
+compatibility_date = "2024-01-01"
+
+# Future Workers configuration (if backend functionality is added)
+# [env.production.vars]
+# ENVIRONMENT = "production"
+
+# For local development with wrangler pages dev
+[[env.production.routes]]
+pattern = "*"
+zone_name = "example.com"  # Replace with actual domain when configured
+
+# Security headers for static site
+[env.production.build]
+command = "npm run build"
+cwd = "."
+watch_dir = "."
+
+# Custom build configuration for static files
+[env.production.build.upload]
+format = "modules"
