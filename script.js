@@ -158,8 +158,13 @@
         const sidebar = document.querySelector('.sidebar');
         if (!sidebar) return;
         sidebar.classList.toggle('mobile-open');
-    // Add a class to the body so we can apply docking styles to header/content
-    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('mobile-open'));
+        // Add a class to the body so we can apply docking styles to header/content
+        document.body.classList.toggle('sidebar-open', sidebar.classList.contains('mobile-open'));
+    }
+
+    // Desktop sidebar toggle
+    function toggleDesktopSidebar() {
+        document.body.classList.toggle('sidebar-collapsed');
     }
 
     // Add mobile menu button (created once)
@@ -168,12 +173,26 @@
         if (!header) return;
         if (document.querySelector('.mobile-menu-btn')) return;
 
-    const btn = document.createElement('button');
-    btn.textContent = 'Menu';
+        const btn = document.createElement('button');
+        btn.textContent = 'Menu';
         btn.className = 'mobile-menu-btn';
         btn.setAttribute('aria-label', 'Toggle menu');
         btn.style.cssText = `background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; color: var(--text-primary); cursor: pointer; font-size: 16px;`;
         btn.addEventListener('click', toggleMobileMenu);
+        header.insertBefore(btn, header.firstChild);
+    }
+
+    // Add desktop menu button (created once)
+    function ensureDesktopMenuButton() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+        if (document.querySelector('.desktop-menu-btn')) return;
+
+        const btn = document.createElement('button');
+        btn.textContent = '☰';
+        btn.className = 'desktop-menu-btn';
+        btn.setAttribute('aria-label', 'Toggle sidebar');
+        btn.addEventListener('click', toggleDesktopSidebar);
         header.insertBefore(btn, header.firstChild);
     }
 
@@ -193,13 +212,15 @@
         initNavigation();
         initSearch();
         ensureMobileMenuButton();
+        ensureDesktopMenuButton();
 
         // Wire theme toggle button to the global function used in HTML
         const themeBtn = document.querySelector('.theme-toggle');
         if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
 
-        // Expose toggleMobileMenu for any inline use
+        // Expose functions for any inline use
         window.toggleMobileMenu = toggleMobileMenu;
+        window.toggleDesktopSidebar = toggleDesktopSidebar;
         window.toggleTheme = toggleTheme;
     });
 

@@ -4,80 +4,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNSRedo Knowledge Base</title>
-    <meta name="description" content="Enterprise DNS Orchestration & Protection Platform - Comprehensive DNS management with AI-powered protection, real-time monitoring, and multi-provider support.">
-    <meta name="keywords" content="DNS management, DNS protection, Cloudflare, Route53, domain management, DNS orchestration, AI-powered DNS">
+    <title>DNSRedo Knowledge Base - Enterprise DNS Management Platform</title>
+    <meta name="description" content="Enterprise DNS Orchestration & Protection Platform - Comprehensive DNS management with AI-powered protection, real-time monitoring, and multi-provider support for Cloudflare, Route53, and more.">
+    <meta name="keywords" content="DNS management, DNS protection, Cloudflare, Route53, domain management, DNS orchestration, AI-powered DNS, enterprise DNS">
     <meta name="author" content="DNSRedo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dnsredo-knowledge-base.pages.dev/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="DNSRedo Knowledge Base">
-    <meta property="og:description" content="Enterprise DNS Orchestration & Protection Platform Documentation">
+    <meta property="og:title" content="DNSRedo Knowledge Base - Enterprise DNS Management">
+    <meta property="og:description" content="Enterprise DNS Orchestration & Protection Platform with AI-powered monitoring and multi-provider support">
     <meta property="og:url" content="https://dnsredo-knowledge-base.pages.dev">
+    <meta property="og:site_name" content="DNSRedo Knowledge Base">
+    <meta property="og:locale" content="en_US">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DNSRedo Knowledge Base">
-    <meta name="twitter:description" content="Enterprise DNS Orchestration & Protection Platform Documentation">
+    <meta name="twitter:title" content="DNSRedo Knowledge Base - Enterprise DNS Management">
+    <meta name="twitter:description" content="Enterprise DNS Orchestration & Protection Platform with AI-powered monitoring and multi-provider support">
+    <meta name="twitter:creator" content="@dnsredo">
     
     <!-- Favicon and Icons -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><text y='20' font-size='20' font-family='monospace'>D</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><text y='20' font-size='20' font-family='monospace'>D</text></svg>">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "DNSRedo Knowledge Base - Enterprise DNS Management Platform",
+        "description": "Comprehensive documentation for DNSRedo's enterprise DNS orchestration and protection platform with AI-powered monitoring and multi-provider support.",
+        "author": {
+            "@type": "Organization",
+            "name": "DNSRedo"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "DNSRedo",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://dnsredo-knowledge-base.pages.dev/favicon.ico"
+            }
+        },
+        "datePublished": "2024-01-01T00:00:00Z",
+        "dateModified": "2024-01-01T00:00:00Z",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://dnsredo-knowledge-base.pages.dev/"
+        },
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "DNS Management"
+            },
+            {
+                "@type": "Thing", 
+                "name": "Enterprise Software"
+            },
+            {
+                "@type": "Thing",
+                "name": "AI-Powered Monitoring"
+            }
+        ]
+    }
+    </script>
     
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
-    <header class="header">
-        <a href="#" class="logo">
-            <div class="logo-icon">D</div>
+    <header class="header" role="banner">
+        <a href="#overview" class="logo">
+            <div class="logo-icon" aria-hidden="true">D</div>
             DNSRedo Knowledge Base
         </a>
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search documentation..." id="searchInput">
+            <label for="searchInput" class="sr-only">Search documentation</label>
+            <input type="text" class="search-input" placeholder="Search documentation..." id="searchInput" autocomplete="off">
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()">
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light and dark theme">
             <span id="themeIcon">Theme</span>
         </button>
     </header>
 
     <div class="container">
         <!-- Sidebar -->
-        <nav class="sidebar">
+        <nav class="sidebar" role="navigation" aria-label="Documentation navigation">
             <div class="sidebar-nav">
                 <div class="nav-section">
                     <h3>Getting Started</h3>
-                    <a class="nav-item active" data-section="overview">Overview</a>
-                    <a class="nav-item" data-section="quick-start">Quick Start Guide</a>
-                    <a class="nav-item" data-section="target-audience">Who This Is For</a>
+                    <a class="nav-item active" data-section="overview" role="button" tabindex="0">Overview</a>
+                    <a class="nav-item" data-section="quick-start" role="button" tabindex="0">Quick Start Guide</a>
+                    <a class="nav-item" data-section="target-audience" role="button" tabindex="0">Who This Is For</a>
                 </div>
 
                 <div class="nav-section">
                     <h3>Core Features</h3>
-                    <a class="nav-item" data-section="dashboard">Dashboard</a>
-                    <a class="nav-item" data-section="domains">Domain Management</a>
-                    <a class="nav-item" data-section="security">Security Center</a>
-                    <a class="nav-item" data-section="analytics">Analytics</a>
+                    <a class="nav-item" data-section="dashboard" role="button" tabindex="0">Dashboard</a>
+                    <a class="nav-item" data-section="domains" role="button" tabindex="0">Domain Management</a>
+                    <a class="nav-item" data-section="security" role="button" tabindex="0">Security Center</a>
+                    <a class="nav-item" data-section="analytics" role="button" tabindex="0">Analytics</a>
                 </div>
 
                 <div class="nav-section">
                     <h3>Tools & Settings</h3>
-                    <a class="nav-item" data-section="dns-tools">DNS Tools</a>
-                    <a class="nav-item" data-section="settings">Settings</a>
-                    <a class="nav-item" data-section="help">DNS Help</a>
+                    <a class="nav-item" data-section="dns-tools" role="button" tabindex="0">DNS Tools</a>
+                    <a class="nav-item" data-section="settings" role="button" tabindex="0">Settings</a>
+                    <a class="nav-item" data-section="help" role="button" tabindex="0">DNS Help</a>
                 </div>
 
                 <div class="nav-section">
                     <h3>Advanced</h3>
-                    <a class="nav-item" data-section="admin">Admin Panel</a>
-                    <a class="nav-item" data-section="pricing">Pricing & Billing</a>
-                    <a class="nav-item" data-section="api">API Reference</a>
+                    <a class="nav-item" data-section="admin" role="button" tabindex="0">Admin Panel</a>
+                    <a class="nav-item" data-section="pricing" role="button" tabindex="0">Pricing & Billing</a>
+                    <a class="nav-item" data-section="api" role="button" tabindex="0">API Reference</a>
                 </div>
             </div>
         </nav>
 
         <!-- Main Content -->
-        <main class="main-content">
+        <main class="main-content" id="main-content" role="main">
             <!-- Overview Section -->
             <div id="overview" class="content-section active">
                 <div class="content-header">
@@ -1433,6 +1485,54 @@ curl -X GET \
 
 </main>
 </div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>DNSRedo</h3>
+            <p>Enterprise DNS Orchestration & Protection Platform</p>
+            <div class="footer-social">
+                <a href="https://github.com/kedster/DNSRedoWiki" target="_blank" rel="noopener" aria-label="GitHub Repository">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://dnsredo-knowledge-base.pages.dev" target="_blank" rel="noopener" aria-label="Live Documentation">
+                    <span>Docs</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="#quick-start">Quick Start</a></li>
+                <li><a href="#api">API Reference</a></li>
+                <li><a href="#help">Support</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Platform</h4>
+            <ul>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#admin">Admin</a></li>
+                <li><a href="mailto:support@dnsredo.com">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 DNSRedo. All rights reserved. | 
+           <a href="#" rel="noopener">Privacy Policy</a> | 
+           <a href="#" rel="noopener">Terms of Service</a>
+        </p>
+    </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
