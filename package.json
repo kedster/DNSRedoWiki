@@ -1,0 +1,39 @@
+{
+  "name": "dnsredo-knowledge-base",
+  "version": "1.0.0",
+  "description": "DNSRedo Knowledge Base - Enterprise DNS Orchestration & Protection Platform Documentation",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build step required' && exit 0",
+    "preview": "python3 -m http.server 8080 --directory .",
+    "lint": "echo 'Linting HTML, CSS, and JS files...' && npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "echo 'HTML validation would go here'",
+    "lint:css": "echo 'CSS validation would go here'", 
+    "lint:js": "echo 'JS validation would go here'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kedster/DNSRedoWiki.git"
+  },
+  "keywords": [
+    "dns",
+    "dns-management",
+    "cloudflare",
+    "domain-management",
+    "dns-protection",
+    "knowledge-base",
+    "documentation"
+  ],
+  "author": "kedster",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
