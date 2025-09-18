@@ -28,7 +28,7 @@ This guide walks through the complete setup process for deploying the DNSRedo Kn
 Add these secrets in your GitHub repository settings (`Settings` → `Secrets and variables` → `Actions`):
 
 ```
-CLOUDFLARE_API_TOKEN=your_api_token_here
+CLOUDFLARE_KEY=your_api_token_here
 CLOUDFLARE_ACCOUNT_ID=your_account_id_here
 ```
 
