@@ -56,7 +56,7 @@ This application is deployed using Cloudflare Pages with automated CI/CD from Gi
    
    **Option A: Automatic Deployment (Recommended)**
    - Push to `main` branch triggers automatic deployment via GitHub Actions
-   - Requires `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets in GitHub
+   - Requires `CLOUDFLARE_KEY` and `CLOUDFLARE_ACCOUNT_ID` secrets in GitHub
 
    **Option B: Manual Deployment**
    ```bash
@@ -67,7 +67,7 @@ This application is deployed using Cloudflare Pages with automated CI/CD from Gi
 
 Configure these secrets in your GitHub repository settings:
 
-- `CLOUDFLARE_API_TOKEN` - Cloudflare API token with Pages:Edit permissions
+- `CLOUDFLARE_KEY` - Cloudflare API token with Pages:Edit permissions
 - `CLOUDFLARE_ACCOUNT_ID` - Your Cloudflare account ID
 
 ### Build Configuration
